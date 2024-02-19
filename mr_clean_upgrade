@@ -1,0 +1,26 @@
+#!/bin/bash
+
+blue_color="\e[34m"
+reset_color="\e[0m"
+orange_color="\e[33m"
+
+clear;
+echo -e "${orange_color}|-~${blue_color}WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW${orange_color}~-|${reset_color}";
+echo -e "${orange_color}|-~${blue_color}W~-| Suppression des fichiers temporaires |-W${orange_color}~-|${reset_color}";
+
+find -name "*~" -exec echo -e "${orange_color}|-~${blue_color}W${orange_color}\tSupprimé: {}${reset_color}" \; -delete;
+find -name "#*#" -exec echo -e "${orange_color}|-~${blue_color}W${orange_color}\tSupprimé: {}${reset_color}" \; -delete;
+find -name "*.o" -exec echo -e "${orange_color}|-~${blue_color}W${orange_color}\tSupprimé: {}${reset_color}" \; -delete;
+find -name "*.a" -exec echo -e "${orange_color}|-~${blue_color}W${orange_color}\tSupprimé: {}${reset_color}" \; -delete;
+find -name "*.hi" -exec echo -e "${orange_color}|-~${blue_color}W${orange_color}\tSupprimé: {}${reset_color}" \; -delete;
+find -name "*.so" -exec echo -e "${orange_color}|-~${blue_color}W${orange_color}\tSupprimé: {}${reset_color}" \; -delete;
+find -name "vgcore.*" -exec echo -e "${orange_color}|-~${blue_color}W${orange_color}\tSupprimé: {}${reset_color}" \; -delete;
+find -name "a.out" -exec echo -e "${orange_color}|-~${blue_color}W${orange_color}\tSupprimé: {}${reset_color}" \; -delete;
+find -name "*.gcno" -exec echo -e "${orange_color}|-~${blue_color}W${orange_color}\tSupprimé: {}${reset_color}" \; -delete;
+find -name "*.gcda" -exec echo -e "${orange_color}|-~${blue_color}W${orange_color}\tSupprimé: {}${reset_color}" \; -delete;
+find -name "mysh" -exec echo -e "${orange_color}|-~${blue_color}W${orange_color}\tSupprimé: {}${reset_color}" \; -delete;
+
+echo -e "${orange_color}|-~${blue_color}WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW${orange_color}~-|${reset_color}";
+echo -e "${orange_color}|-~${blue_color}WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW${orange_color}~-|${reset_color}";
+sleep 3;
+clear;
