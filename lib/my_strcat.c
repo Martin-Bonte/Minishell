@@ -10,7 +10,7 @@ char *my_strcat(char *dest, char *src)
 {
     int i;
     int j;
-    char *result = (char *)malloc(strlen(dest) + strlen(src) + 1);
+    char *result = (char *)malloc(my_strlen(dest) + my_strlen(src) + 1);
 
     if (result == NULL) {
         return NULL;

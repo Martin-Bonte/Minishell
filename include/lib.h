@@ -19,6 +19,7 @@
     #include <time.h>
     #include <sys/wait.h>
     #include <stddef.h>
+    #include <errno.h>
 
 int mini_printf(const char *format, ...);
 int my_getnbr(char const *str);
@@ -34,5 +35,7 @@ char *my_strcat(char *dest, char *src);
 int my_strcmp(char *temp1, char *temp2);
 int my_doublestrlen(char **str);
 int my_strncmp(const char *str1, const char *str2, size_t n);
+void *my_memset(void *data, int c, unsigned int len);
+void *my_malloc(size_t size);
 
 #endif /* !LIB_H_ */

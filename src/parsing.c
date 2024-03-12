@@ -8,13 +8,17 @@
 
 static char *do_str(char **buffer, char *temp, int j)
 {
+    char *result = NULL;
+
     if (buffer[j - 1] != NULL) {
-        temp = malloc(sizeof(char) * (my_strlen(buffer[j - 1]) + 1));
+        temp = my_malloc(sizeof(char) * (my_strlen(buffer[j - 1]) + 1));
         if (temp != NULL) {
             temp = my_strcpy(buffer[j - 1]);
         }
     }
-    return temp;
+    result = my_strcpy(temp);
+    free(temp);
+    return result;
 }
 
 void supprimer_null_strings(char **liste)
@@ -22,11 +26,13 @@ void supprimer_null_strings(char **liste)
     int i = 0;
     int j = 0;
 
-    for (i = 0; liste[i] != NULL; i++) {
+    while (liste[i] != NULL) {
         if (liste[i][0] != '\0') {
             liste[j] = liste[i];
             j++;
-        }
+        } else
+            free(liste[i]);
+        i++;
     }
     liste[j] = NULL;
 }
@@ -38,10 +44,12 @@ char *is_valid(char *arg)
     int j = 0;
 
     for (int i = 0; buffer[i] != NULL; i++) {
-        if (my_strcmp(buffer[i], "bin") != 0) {
+        if (my_strcmp(buffer[i], "bin") != 0
+            && my_strcmp(buffer[i], "usr") != 0) {
             buffer[j] = buffer[i];
             j++;
-        }
+        } else
+            free(buffer[i]);
     }
     buffer[j] = NULL;
     temp = do_str(buffer, temp, j);

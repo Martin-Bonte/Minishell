@@ -5,32 +5,39 @@
 ## Makefile
 ##
 
-SRC		= 	lib/mini_printf.c \
-			lib/my_getnbr.c \
-			lib/my_put_nbr.c \
-			lib/my_putchar.c \
-			lib/my_putstr.c \
-			lib/my_str_to_word_array.c \
-			lib/my_strcpy.c \
-			lib/my_strdup.c \
-			lib/my_strncpy.c \
-			lib/my_strlen.c \
-			src/minishell.c \
-			lib/my_strcat.c \
-			src/command.c \
-			src/env.c \
-			src/cd.c \
-			src/parsing.c \
-			lib/my_strcmp.c \
+SRC		= 	lib/mini_printf.c 			\
+			lib/my_getnbr.c 			\
+			lib/my_put_nbr.c 			\
+			lib/my_putchar.c 			\
+			lib/my_putstr.c 			\
+			lib/my_str_to_word_array.c 	\
+			lib/my_strcpy.c 			\
+			lib/my_strdup.c 			\
+			lib/my_strncpy.c 			\
+			lib/my_strlen.c 			\
+			lib/my_strcat.c 			\
+			lib/my_malloc.c 			\
+			lib/my_memset.c 			\
+			lib/my_strcmp.c 			\
+										\
+			src/minishell.c 			\
+			src/parsing.c 				\
+										\
+			src/command/command.c 		\
+			src/command/env.c 			\
+			src/command/cd.c 			\
+			src/command/setenv.c 		\
+			src/command/unsetenv.c 		\
 
 OBJ 	= 	$(SRC:.c=.o)
 
 NAME    =   mysh
 
-CFLAGS 	= 	-Wall -Wextra -g
+CFLAGS 	= 	-W -Wall -Wextra -Werror -Wpedantic -g
 
-all:    $(OBJ)
-	@rm -f $(NAME)
+all:	$(NAME)
+
+$(NAME):	$(OBJ)
 	ar rc $(NAME) $(OBJ) -lmy
 	gcc -o $(NAME) $(OBJ)
 
