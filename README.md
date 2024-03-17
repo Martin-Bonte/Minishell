@@ -12,7 +12,9 @@ How to use
  - Launch as normal mode with     [./mysh]
  - Exit shell pressing     [^D]
 
-the [ ] have not to be written
+the "["  "]" have not to be written
 
-The code respects Epitech-Norm and contains no memory leak and no error.
+The code respects Epitech-Norm and contains no error.
 Notice : custom built-in cd env setenv unsetenv have to be written
+
+Warning : The Minishell project work only on Ubuntu and Linux Shell
